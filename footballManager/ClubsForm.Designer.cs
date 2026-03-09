@@ -36,6 +36,7 @@
             btnDelete = new Button();
             label1 = new Label();
             label2 = new Label();
+            btnOpenPlayers = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvClubs).BeginInit();
             SuspendLayout();
             // 
@@ -110,11 +111,22 @@
             label2.TabIndex = 7;
             label2.Text = "Град";
             // 
+            // btnOpenPlayers
+            // 
+            btnOpenPlayers.Location = new Point(532, 489);
+            btnOpenPlayers.Name = "btnOpenPlayers";
+            btnOpenPlayers.Size = new Size(75, 23);
+            btnOpenPlayers.TabIndex = 8;
+            btnOpenPlayers.Text = "Играчи";
+            btnOpenPlayers.UseVisualStyleBackColor = true;
+            btnOpenPlayers.Click += btnOpenPlayers_Click;
+            // 
             // ClubsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(923, 641);
+            Controls.Add(btnOpenPlayers);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnDelete);
@@ -125,6 +137,7 @@
             Controls.Add(dgvClubs);
             Name = "ClubsForm";
             Text = "Form1";
+            Load += ClubsForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvClubs).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -140,5 +153,6 @@
         private Button btnDelete;
         private Label label1;
         private Label label2;
+        private Button btnOpenPlayers;
     }
 }

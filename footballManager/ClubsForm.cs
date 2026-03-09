@@ -40,6 +40,7 @@
             dgvClubs.RowHeadersVisible = false; // Скрива грозната празна колона най-вляво
             dgvClubs.RowTemplate.Height = 35; // Прави редовете по-широки и удобни
             dgvClubs.AllowUserToAddRows = false; // Маха празния ред най-отдолу
+            dgvClubs.ReadOnly = true;
 
             // 3. Настройки на Бутоните
             StyleButton(btnAdd, Color.FromArgb(46, 204, 113), "Добави"); // Зелено
@@ -113,6 +114,22 @@
             {
                 if (repo.Delete(selectedClubId)) LoadData();
             }
+        }
+
+        private void ClubsForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpenPlayers_Click(object sender, EventArgs e)
+        {
+            // Създаваме инстанция на формата
+            PlayersForm playersForm = new PlayersForm();
+
+            // Опция А: Отваря я като независим прозорец (можеш да кликаш и в двете форми)
+            playersForm.Show();
+
+        
         }
     }
 }
