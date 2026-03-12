@@ -5,7 +5,7 @@ public class ClubRepository
 {
     public DataTable GetAllClubs()
     {
-        return Db.GetDataTable("SELECT ClubId, Name, City FROM clubs ORDER BY Name");
+        return Db.GetDataTable("SELECT ClubId, Name, City FROM clubs ORDER BY ClubId ASC");
     }
 
     public bool Add(Club club)

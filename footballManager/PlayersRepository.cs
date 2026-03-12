@@ -8,10 +8,10 @@ public class PlayersRepository
     public DataTable GetPlayers(int clubId = 0, string position = "All", string searchName = "")
     {
         string sql = @"
-            SELECT p.PlayerId, p.FullName, p.BirthDate, p.Position, p.ShirtNumber, p.ClubId, c.Name AS ClubName
-            FROM players p
-            JOIN clubs c ON p.ClubId = c.ClubId
-            WHERE 1=1";
+        SELECT p.PlayerId, p.FullName, p.BirthDate, p.Position, p.ShirtNumber, p.ClubId, c.Name AS ClubName
+        FROM players p
+        JOIN clubs c ON p.ClubId = c.ClubId
+        WHERE 1=1";
 
         List<MySqlParameter> parameters = new List<MySqlParameter>();
 
@@ -33,7 +33,7 @@ public class PlayersRepository
             parameters.Add(new MySqlParameter("@searchName", "%" + searchName + "%"));
         }
 
-        sql += " ORDER BY c.Name, p.FullName";
+        sql += " ORDER BY p.PlayerId ASC";
 
         return Db.GetDataTable(sql, parameters.ToArray());
     }

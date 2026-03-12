@@ -42,80 +42,95 @@
             // 
             // dgvClubs
             // 
+            dgvClubs.AllowUserToAddRows = false;
+            dgvClubs.AllowUserToDeleteRows = false;
+            dgvClubs.AllowUserToResizeColumns = false;
+            dgvClubs.AllowUserToResizeRows = false;
             dgvClubs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvClubs.Location = new Point(51, 24);
             dgvClubs.Name = "dgvClubs";
             dgvClubs.Size = new Size(803, 364);
             dgvClubs.TabIndex = 0;
-            dgvClubs.CellContentClick += dgvClubs_CellContentClick;
+            dgvClubs.CellClick += dgvClubs_CellClick;
             // 
             // txtName
             // 
-            txtName.Location = new Point(165, 427);
+            txtName.BackColor = SystemColors.Window;
+            txtName.BorderStyle = BorderStyle.FixedSingle;
+            txtName.Font = new Font("Segoe UI", 14F);
+            txtName.Location = new Point(194, 430);
             txtName.Name = "txtName";
-            txtName.Size = new Size(198, 23);
+            txtName.Size = new Size(198, 32);
             txtName.TabIndex = 1;
             // 
             // txtCity
             // 
-            txtCity.Location = new Point(634, 427);
+            txtCity.BorderStyle = BorderStyle.FixedSingle;
+            txtCity.Font = new Font("Segoe UI", 14F);
+            txtCity.Location = new Point(194, 485);
             txtCity.Name = "txtCity";
-            txtCity.Size = new Size(100, 23);
+            txtCity.Size = new Size(198, 32);
             txtCity.TabIndex = 2;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(217, 481);
+            btnAdd.Font = new Font("Segoe UI", 14F);
+            btnAdd.Location = new Point(613, 401);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(102, 23);
+            btnAdd.Size = new Size(182, 57);
             btnAdd.TabIndex = 3;
-            btnAdd.Text = "Add";
+            btnAdd.Text = "Добави";
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += btnAdd_Click_1;
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(217, 526);
+            btnEdit.Font = new Font("Segoe UI", 14F);
+            btnEdit.Location = new Point(618, 542);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(102, 23);
+            btnEdit.Size = new Size(177, 55);
             btnEdit.TabIndex = 4;
-            btnEdit.Text = "Edit";
+            btnEdit.Text = "Редактирай";
             btnEdit.UseVisualStyleBackColor = true;
             btnEdit.Click += btnEdit_Click_1;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(217, 580);
+            btnDelete.Font = new Font("Segoe UI", 14F);
+            btnDelete.Location = new Point(618, 472);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(102, 23);
+            btnDelete.Size = new Size(177, 57);
             btnDelete.TabIndex = 5;
-            btnDelete.Text = "Delete";
+            btnDelete.Text = "Изтрий";
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click_1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(73, 430);
+            label1.Font = new Font("Segoe UI", 15F);
+            label1.Location = new Point(42, 430);
             label1.Name = "label1";
-            label1.Size = new Size(76, 15);
+            label1.Size = new Size(126, 28);
             label1.TabIndex = 6;
             label1.Text = "Име на клуб";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(542, 430);
+            label2.Font = new Font("Segoe UI", 15F);
+            label2.Location = new Point(68, 485);
             label2.Name = "label2";
-            label2.Size = new Size(32, 15);
+            label2.Size = new Size(54, 28);
             label2.TabIndex = 7;
             label2.Text = "Град";
             // 
             // btnOpenPlayers
             // 
-            btnOpenPlayers.Location = new Point(532, 489);
+            btnOpenPlayers.Font = new Font("Segoe UI", 14F);
+            btnOpenPlayers.Location = new Point(823, 472);
             btnOpenPlayers.Name = "btnOpenPlayers";
-            btnOpenPlayers.Size = new Size(75, 23);
+            btnOpenPlayers.Size = new Size(88, 57);
             btnOpenPlayers.TabIndex = 8;
             btnOpenPlayers.Text = "Играчи";
             btnOpenPlayers.UseVisualStyleBackColor = true;

@@ -12,7 +12,6 @@ namespace footballManager
         private DataGridView dgvPlayers;
         private ComboBox cboClubFilter;
         private ComboBox cboPositionFilter;
-        private ComboBox txtSearchName;
         private TextBox txtFullName;
         private DateTimePicker dtpBirthDate;
         private ComboBox cboClub;
@@ -22,6 +21,15 @@ namespace footballManager
         private Button btnUpdate;
         private Button btnDelete;
         private Button btnClear;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private TextBox txtSearchName;
         bool isInitializing = true; // Флаг, за да не се задействат филтрите при първоначално зареждане
 
         public PlayersForm()
@@ -48,6 +56,7 @@ namespace footballManager
             dgvPlayers.ReadOnly = true;
             dgvPlayers.AllowUserToAddRows = false;
             dgvPlayers.RowHeadersVisible = false;
+            
 
             // Свързване на събития за филтрите
             cboClubFilter.SelectedIndexChanged += ApplyFilters;
@@ -231,7 +240,6 @@ namespace footballManager
             dgvPlayers = new DataGridView();
             cboClubFilter = new ComboBox();
             cboPositionFilter = new ComboBox();
-            txtSearchName = new ComboBox();
             txtFullName = new TextBox();
             dtpBirthDate = new DateTimePicker();
             cboClub = new ComboBox();
@@ -241,84 +249,93 @@ namespace footballManager
             btnUpdate = new Button();
             btnDelete = new Button();
             btnClear = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            txtSearchName = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvPlayers).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numShirtNumber).BeginInit();
             SuspendLayout();
             // 
             // dgvPlayers
             // 
+            dgvPlayers.AllowUserToAddRows = false;
+            dgvPlayers.AllowUserToDeleteRows = false;
+            dgvPlayers.AllowUserToResizeColumns = false;
+            dgvPlayers.AllowUserToResizeRows = false;
+            dgvPlayers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPlayers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPlayers.Location = new Point(115, 91);
+            dgvPlayers.Location = new Point(4, 91);
             dgvPlayers.Name = "dgvPlayers";
-            dgvPlayers.Size = new Size(555, 329);
+            dgvPlayers.Size = new Size(746, 329);
             dgvPlayers.TabIndex = 0;
+            dgvPlayers.CellClick += dgvPlayers_CellClick;
             // 
             // cboClubFilter
             // 
             cboClubFilter.FormattingEnabled = true;
-            cboClubFilter.Location = new Point(115, 49);
+            cboClubFilter.Location = new Point(50, 49);
             cboClubFilter.Name = "cboClubFilter";
-            cboClubFilter.Size = new Size(161, 23);
+            cboClubFilter.Size = new Size(195, 23);
             cboClubFilter.TabIndex = 1;
             // 
             // cboPositionFilter
             // 
             cboPositionFilter.FormattingEnabled = true;
-            cboPositionFilter.Location = new Point(322, 49);
+            cboPositionFilter.Location = new Point(294, 49);
             cboPositionFilter.Name = "cboPositionFilter";
-            cboPositionFilter.Size = new Size(168, 23);
+            cboPositionFilter.Size = new Size(180, 23);
             cboPositionFilter.TabIndex = 2;
-            // 
-            // txtSearchName
-            // 
-            txtSearchName.FormattingEnabled = true;
-            txtSearchName.Location = new Point(524, 49);
-            txtSearchName.Name = "txtSearchName";
-            txtSearchName.Size = new Size(146, 23);
-            txtSearchName.TabIndex = 3;
             // 
             // txtFullName
             // 
-            txtFullName.Location = new Point(126, 453);
+            txtFullName.BorderStyle = BorderStyle.FixedSingle;
+            txtFullName.Location = new Point(105, 449);
             txtFullName.Name = "txtFullName";
-            txtFullName.Size = new Size(100, 23);
+            txtFullName.Size = new Size(152, 23);
             txtFullName.TabIndex = 4;
             // 
             // dtpBirthDate
             // 
-            dtpBirthDate.Location = new Point(290, 453);
+            dtpBirthDate.Location = new Point(271, 451);
             dtpBirthDate.Name = "dtpBirthDate";
-            dtpBirthDate.Size = new Size(200, 23);
+            dtpBirthDate.Size = new Size(219, 23);
             dtpBirthDate.TabIndex = 6;
             // 
             // cboClub
             // 
             cboClub.FormattingEnabled = true;
-            cboClub.Location = new Point(559, 449);
+            cboClub.Location = new Point(105, 477);
             cboClub.Name = "cboClub";
-            cboClub.Size = new Size(121, 23);
+            cboClub.Size = new Size(152, 23);
             cboClub.TabIndex = 7;
             // 
             // cboPosition
             // 
             cboPosition.FormattingEnabled = true;
-            cboPosition.Location = new Point(136, 498);
+            cboPosition.Location = new Point(105, 506);
             cboPosition.Name = "cboPosition";
-            cboPosition.Size = new Size(121, 23);
+            cboPosition.Size = new Size(152, 23);
             cboPosition.TabIndex = 8;
             // 
             // numShirtNumber
             // 
-            numShirtNumber.Location = new Point(538, 510);
+            numShirtNumber.Location = new Point(105, 536);
             numShirtNumber.Name = "numShirtNumber";
-            numShirtNumber.Size = new Size(120, 23);
+            numShirtNumber.Size = new Size(152, 23);
             numShirtNumber.TabIndex = 9;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(345, 547);
+            btnAdd.Font = new Font("Segoe UI", 14F);
+            btnAdd.Location = new Point(496, 446);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(75, 23);
+            btnAdd.Size = new Size(142, 51);
             btnAdd.TabIndex = 10;
             btnAdd.Text = "Добави";
             btnAdd.UseVisualStyleBackColor = true;
@@ -326,9 +343,10 @@ namespace footballManager
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(481, 549);
+            btnUpdate.Font = new Font("Segoe UI", 14F);
+            btnUpdate.Location = new Point(496, 506);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(75, 23);
+            btnUpdate.Size = new Size(142, 56);
             btnUpdate.TabIndex = 11;
             btnUpdate.Text = "Актуализирай";
             btnUpdate.UseVisualStyleBackColor = true;
@@ -336,9 +354,10 @@ namespace footballManager
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(633, 562);
+            btnDelete.Font = new Font("Segoe UI", 14F);
+            btnDelete.Location = new Point(645, 506);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(75, 23);
+            btnDelete.Size = new Size(105, 56);
             btnDelete.TabIndex = 12;
             btnDelete.Text = "Изтрий";
             btnDelete.UseVisualStyleBackColor = true;
@@ -346,17 +365,115 @@ namespace footballManager
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(141, 548);
+            btnClear.Font = new Font("Segoe UI", 14F);
+            btnClear.Location = new Point(645, 446);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(75, 23);
+            btnClear.Size = new Size(105, 51);
             btnClear.TabIndex = 13;
             btnClear.Text = "Изчисти";
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 16F);
+            label1.Location = new Point(568, 16);
+            label1.Name = "label1";
+            label1.Size = new Size(106, 30);
+            label1.TabIndex = 14;
+            label1.Text = "Търсачка";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 16F);
+            label2.Location = new Point(105, 16);
+            label2.Name = "label2";
+            label2.Size = new Size(62, 30);
+            label2.TabIndex = 15;
+            label2.Text = "Клуб";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 16F);
+            label3.Location = new Point(328, 16);
+            label3.Name = "label3";
+            label3.Size = new Size(102, 30);
+            label3.TabIndex = 16;
+            label3.Text = "Позиция";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            label4.Location = new Point(12, 449);
+            label4.Name = "label4";
+            label4.Size = new Size(50, 25);
+            label4.TabIndex = 17;
+            label4.Text = "Име";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            label5.Location = new Point(12, 475);
+            label5.Name = "label5";
+            label5.Size = new Size(57, 25);
+            label5.TabIndex = 18;
+            label5.Text = "Клуб";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            label6.Location = new Point(12, 503);
+            label6.Name = "label6";
+            label6.Size = new Size(90, 25);
+            label6.TabIndex = 19;
+            label6.Text = "Позиция";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            label7.Location = new Point(12, 536);
+            label7.Name = "label7";
+            label7.Size = new Size(72, 25);
+            label7.TabIndex = 20;
+            label7.Text = "Номер";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            label8.Location = new Point(319, 423);
+            label8.Name = "label8";
+            label8.Size = new Size(145, 25);
+            label8.TabIndex = 21;
+            label8.Text = "Рожденна дата";
+            // 
+            // txtSearchName
+            // 
+            txtSearchName.BorderStyle = BorderStyle.FixedSingle;
+            txtSearchName.Location = new Point(530, 49);
+            txtSearchName.Name = "txtSearchName";
+            txtSearchName.Size = new Size(194, 23);
+            txtSearchName.TabIndex = 22;
+            // 
             // PlayersForm
             // 
             ClientSize = new Size(753, 597);
+            Controls.Add(txtSearchName);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(btnClear);
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
@@ -366,11 +483,11 @@ namespace footballManager
             Controls.Add(cboClub);
             Controls.Add(dtpBirthDate);
             Controls.Add(txtFullName);
-            Controls.Add(txtSearchName);
             Controls.Add(cboPositionFilter);
             Controls.Add(cboClubFilter);
             Controls.Add(dgvPlayers);
             Name = "PlayersForm";
+            StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)dgvPlayers).EndInit();
             ((System.ComponentModel.ISupportInitialize)numShirtNumber).EndInit();
             ResumeLayout(false);
@@ -382,6 +499,5 @@ namespace footballManager
         {
             ClearFields();
         }
-
     }
 }

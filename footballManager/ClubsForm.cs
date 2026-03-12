@@ -83,7 +83,7 @@
             }
         }
 
-        private void dgvClubs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvClubs_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
