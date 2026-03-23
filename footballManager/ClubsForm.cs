@@ -129,7 +129,15 @@
             // Опция А: Отваря я като независим прозорец (можеш да кликаш и в двете форми)
             playersForm.Show();
 
-        
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TransfersForm transfersForm = new TransfersForm();
+
+            // Опция А: Отваря я като независим прозорец (можеш да кликаш и в двете форми)
+            transfersForm.Show();
         }
     }
 }
