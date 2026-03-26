@@ -39,6 +39,7 @@
             dtpTransferDate = new DateTimePicker();
             numFee = new NumericUpDown();
             label4 = new Label();
+            label9 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvTransfers).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numFee).BeginInit();
             SuspendLayout();
@@ -47,7 +48,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            label6.Location = new Point(100, 463);
+            label6.Location = new Point(100, 466);
             label6.Name = "label6";
             label6.Size = new Size(57, 25);
             label6.TabIndex = 40;
@@ -67,7 +68,7 @@
             // 
             lblFromClub.AutoSize = true;
             lblFromClub.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            lblFromClub.Location = new Point(466, 509);
+            lblFromClub.Location = new Point(234, 492);
             lblFromClub.Name = "lblFromClub";
             lblFromClub.Size = new Size(50, 25);
             lblFromClub.TabIndex = 38;
@@ -146,11 +147,22 @@
             label4.TabIndex = 43;
             label4.Text = "Бележка";
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            label9.Location = new Point(100, 491);
+            label9.Name = "label9";
+            label9.Size = new Size(128, 25);
+            label9.TabIndex = 44;
+            label9.Text = "Име на клуб:";
+            // 
             // TransfersForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(867, 543);
+            Controls.Add(label9);
             Controls.Add(label4);
             Controls.Add(numFee);
             Controls.Add(dtpTransferDate);
@@ -164,6 +176,7 @@
             Controls.Add(dgvTransfers);
             Name = "TransfersForm";
             Text = "TransfersForm";
+            Load += TransfersForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvTransfers).EndInit();
             ((System.ComponentModel.ISupportInitialize)numFee).EndInit();
             ResumeLayout(false);
@@ -196,5 +209,6 @@
         private DateTimePicker dtpTransferDate;
         private NumericUpDown numFee;
         private Label label4;
+        private Label label9;
     }
 }

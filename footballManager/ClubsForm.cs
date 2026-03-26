@@ -14,7 +14,17 @@
 
         private void LoadData()
         {
+
             dgvClubs.DataSource = repo.GetAllClubs();
+            // Промяна на заглавията на колоните
+            if (dgvClubs.Columns["ClubId"] != null)
+                dgvClubs.Columns["ClubId"].HeaderText = "ID на клуб";
+
+            if (dgvClubs.Columns["Name"] != null)
+                dgvClubs.Columns["Name"].HeaderText = "Име на отбора";
+
+            if (dgvClubs.Columns["City"] != null)
+                dgvClubs.Columns["City"].HeaderText = "Град";
             ClearFields();
         }
 

@@ -20,7 +20,7 @@ public class TransfersRepository
         if (playerId.HasValue && playerId > 0)
             sql += " WHERE t.PlayerId = " + playerId.Value;
 
-        sql += " ORDER BY t.TransferDate DESC";
+        sql += " ORDER BY t.TransferId ASC";
         return Db.GetDataTable(sql);
     }
 

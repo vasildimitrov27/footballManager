@@ -27,6 +27,7 @@ namespace footballManager
         {
             // Зареждане на историята
             dgvTransfers.DataSource = transRepo.GetTransfersHistory();
+            
 
             // Зареждане на играчи в ComboBox
             cboPlayer.DataSource = playerRepo.GetPlayers();
@@ -37,6 +38,28 @@ namespace footballManager
             cboToClub.DataSource = playerRepo.GetClubsForDropdown();
             cboToClub.DisplayMember = "Name";
             cboToClub.ValueMember = "ClubId";
+
+            if (dgvTransfers.Columns["TrasferId"] != null)
+                dgvTransfers.Columns["TransferId"].HeaderText = "ID на трансфер";
+
+            if (dgvTransfers.Columns["PlayerName"] != null)
+                dgvTransfers.Columns["PlayerName"].HeaderText = "Име на играч";
+
+            if (dgvTransfers.Columns["FromClub"] != null)
+                dgvTransfers.Columns["FromClub"].HeaderText = "От клуб";
+
+            if (dgvTransfers.Columns["ToClub"] != null)
+                dgvTransfers.Columns["ToClub"].HeaderText = "Към клуб";
+
+            if (dgvTransfers.Columns["TransferDate"] != null)
+                dgvTransfers.Columns["TransferDate"].HeaderText = "Дата на трансфер";
+
+            if (dgvTransfers.Columns["Fee"] != null)
+                dgvTransfers.Columns["Fee"].HeaderText = "Цена на трансфер";
+
+            if (dgvTransfers.Columns["Note"] != null)
+                dgvTransfers.Columns["Note"].HeaderText = "Бележка";
+
         }
 
         // Когато изберем играч, трябва да видим от кой клуб ИДВА той
@@ -75,6 +98,11 @@ namespace footballManager
                 MessageBox.Show("Трансферът е извършен успешно!");
                 LoadData(); // Обновяваме историята и списъците
             }
+        }
+
+        private void TransfersForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

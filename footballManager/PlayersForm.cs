@@ -56,7 +56,7 @@ namespace footballManager
             dgvPlayers.ReadOnly = true;
             dgvPlayers.AllowUserToAddRows = false;
             dgvPlayers.RowHeadersVisible = false;
-            
+
 
             // Свързване на събития за филтрите
             cboClubFilter.SelectedIndexChanged += ApplyFilters;
@@ -101,7 +101,23 @@ namespace footballManager
             string search = txtSearchName.Text.Trim();
 
             dgvPlayers.DataSource = repo.GetPlayers(clubId, position, search);
+            if (dgvPlayers.Columns["PlayerID"] != null)
+                dgvPlayers.Columns["PlayerID"].HeaderText = "ID на играч";
 
+            if (dgvPlayers.Columns["FullName"] != null)
+                dgvPlayers.Columns["FullName"].HeaderText = "Име на играч";
+
+            if (dgvPlayers.Columns["BirthDate"] != null)
+                dgvPlayers.Columns["BirthDate"].HeaderText = "Рождена дата";
+
+            if (dgvPlayers.Columns["Position"] != null)
+                dgvPlayers.Columns["Position"].HeaderText = "Позиция";
+
+            if (dgvPlayers.Columns["ShirtNumber"] != null)
+                dgvPlayers.Columns["ShirtNumber"].HeaderText = "Номер";
+
+            if (dgvPlayers.Columns["ClubName"] != null)
+                dgvPlayers.Columns["ClubName"].HeaderText = "Име на клуб";
             // Скриване на излишни колони
             if (dgvPlayers.Columns["ClubId"] != null) dgvPlayers.Columns["ClubId"].Visible = false;
         }
@@ -488,6 +504,7 @@ namespace footballManager
             Controls.Add(dgvPlayers);
             Name = "PlayersForm";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += PlayersForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvPlayers).EndInit();
             ((System.ComponentModel.ISupportInitialize)numShirtNumber).EndInit();
             ResumeLayout(false);
@@ -498,6 +515,11 @@ namespace footballManager
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearFields();
+        }
+
+        private void PlayersForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
