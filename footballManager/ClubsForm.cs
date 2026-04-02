@@ -149,5 +149,11 @@
             // Опция А: Отваря я като независим прозорец (можеш да кликаш и в двете форми)
             transfersForm.Show();
         }
+
+        private void btnLeagues_Click(object sender, EventArgs e)
+        {
+            LeaguesForm leaguesForm = new LeaguesForm();
+            leaguesForm.Show();
+        }
     }
 }
