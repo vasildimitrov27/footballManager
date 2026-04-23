@@ -36,9 +36,6 @@
             btnDelete = new Button();
             label1 = new Label();
             label2 = new Label();
-            btnOpenPlayers = new Button();
-            button1 = new Button();
-            btnLeagues = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvClubs).BeginInit();
             SuspendLayout();
             // 
@@ -127,47 +124,11 @@
             label2.TabIndex = 7;
             label2.Text = "Град";
             // 
-            // btnOpenPlayers
-            // 
-            btnOpenPlayers.Font = new Font("Segoe UI", 14F);
-            btnOpenPlayers.Location = new Point(823, 472);
-            btnOpenPlayers.Name = "btnOpenPlayers";
-            btnOpenPlayers.Size = new Size(88, 57);
-            btnOpenPlayers.TabIndex = 8;
-            btnOpenPlayers.Text = "Играчи";
-            btnOpenPlayers.UseVisualStyleBackColor = true;
-            btnOpenPlayers.Click += btnOpenPlayers_Click;
-            // 
-            // button1
-            // 
-            button1.Font = new Font("Segoe UI", 14F);
-            button1.Location = new Point(231, 542);
-            button1.Name = "button1";
-            button1.Size = new Size(148, 57);
-            button1.TabIndex = 9;
-            button1.Text = "Трансфери";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // btnLeagues
-            // 
-            btnLeagues.Font = new Font("Segoe UI", 14F);
-            btnLeagues.Location = new Point(427, 505);
-            btnLeagues.Name = "btnLeagues";
-            btnLeagues.Size = new Size(95, 57);
-            btnLeagues.TabIndex = 10;
-            btnLeagues.Text = "Лиги";
-            btnLeagues.UseVisualStyleBackColor = true;
-            btnLeagues.Click += btnLeagues_Click;
-            // 
             // ClubsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(923, 641);
-            Controls.Add(btnLeagues);
-            Controls.Add(button1);
-            Controls.Add(btnOpenPlayers);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnDelete);
@@ -194,8 +155,5 @@
         private Button btnDelete;
         private Label label1;
         private Label label2;
-        private Button btnOpenPlayers;
-        private Button button1;
-        private Button btnLeagues;
     }
 }

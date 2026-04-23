@@ -19,6 +19,16 @@ namespace footballManager
         private void LoadLeagues()
         {
             dgvLeagues.DataSource = repo.GetAllLeagues();
+
+            if (dgvLeagues.Columns["LeagueID"] != null)
+                dgvLeagues.Columns["LeagueID"].HeaderText = "ID на лига";
+            if (dgvLeagues.Columns["Name"] != null)
+                dgvLeagues.Columns["Name"].HeaderText = "Име";
+            if (dgvLeagues.Columns["Season"] != null)
+                dgvLeagues.Columns["Season"].HeaderText = "Сезон";
+
+
+
         }
 
         private void dgvLeagues_SelectionChanged(object sender, EventArgs e)
@@ -37,6 +47,12 @@ namespace footballManager
 
             // 1. Списък с текущи участници
             dgvParticipants.DataSource = repo.GetParticipants(selectedLeagueId);
+            if (dgvParticipants.Columns["ClubId"] != null)
+                dgvParticipants.Columns["ClubId"].HeaderText = "ID на клуб";
+            if (dgvParticipants.Columns["Name"] != null)
+                dgvParticipants.Columns["Name"].HeaderText = "Име";
+            if (dgvParticipants.Columns["City"] != null)
+                dgvParticipants.Columns["City"].HeaderText = "Град";
 
             // 2. Списък с налични за добавяне клубове
             cboAvailableClubs.DataSource = repo.GetAvailableClubs(selectedLeagueId);
@@ -92,6 +108,11 @@ namespace footballManager
                     MessageBox.Show("Не може да премахнете отбор, който вече има записани мачове!");
                 }
             }
+        }
+
+        private void Сезон_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
