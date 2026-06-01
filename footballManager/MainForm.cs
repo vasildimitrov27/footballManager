@@ -45,5 +45,11 @@ namespace footballManager
             TransfersForm transfersForm = new TransfersForm();
             transfersForm.ShowDialog();
         }
+
+        private void btnMatches_Click(object sender, EventArgs e)
+        {
+            ScheduleForm scheduleForm = new ScheduleForm();
+            scheduleForm.ShowDialog();
+        }
     }
 }

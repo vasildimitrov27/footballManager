@@ -33,6 +33,7 @@
             TransferButton = new Button();
             LeaguesButton = new Button();
             PlayersButton = new Button();
+            btnMatches = new Button();
             SuspendLayout();
             // 
             // ClubsButton
@@ -89,11 +90,23 @@
             PlayersButton.UseVisualStyleBackColor = true;
             PlayersButton.Click += PlayersButton_Click;
             // 
+            // btnMatches
+            // 
+            btnMatches.Font = new Font("Segoe UI", 12F);
+            btnMatches.Location = new Point(12, 245);
+            btnMatches.Name = "btnMatches";
+            btnMatches.Size = new Size(155, 57);
+            btnMatches.TabIndex = 10;
+            btnMatches.Text = "Управление на мачове";
+            btnMatches.UseVisualStyleBackColor = true;
+            btnMatches.Click += btnMatches_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(343, 297);
+            ClientSize = new Size(343, 333);
+            Controls.Add(btnMatches);
             Controls.Add(PlayersButton);
             Controls.Add(LeaguesButton);
             Controls.Add(TransferButton);
@@ -114,5 +127,6 @@
         private Button TransferButton;
         private Button LeaguesButton;
         private Button PlayersButton;
+        private Button btnMatches;
     }
 }
