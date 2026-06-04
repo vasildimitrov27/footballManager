@@ -41,6 +41,7 @@
             dgvMatches.AllowUserToAddRows = false;
             dgvMatches.AllowUserToDeleteRows = false;
             dgvMatches.AllowUserToOrderColumns = true;
+            dgvMatches.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvMatches.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMatches.Location = new Point(32, 12);
             dgvMatches.Name = "dgvMatches";
@@ -65,6 +66,7 @@
             cboLeagues.Name = "cboLeagues";
             cboLeagues.Size = new Size(161, 23);
             cboLeagues.TabIndex = 2;
+            cboLeagues.SelectedIndexChanged += cboLeagues_SelectedIndexChanged;
             // 
             // chkTwoRounds
             // 
@@ -97,7 +99,9 @@
             Controls.Add(label1);
             Controls.Add(dgvMatches);
             Name = "ScheduleForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ScheduleForm";
+            Load += ScheduleForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvMatches).EndInit();
             ResumeLayout(false);
             PerformLayout();

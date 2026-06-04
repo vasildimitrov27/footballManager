@@ -175,6 +175,7 @@
             Controls.Add(txtNote);
             Controls.Add(dgvTransfers);
             Name = "TransfersForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "TransfersForm";
             Load += TransfersForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvTransfers).EndInit();

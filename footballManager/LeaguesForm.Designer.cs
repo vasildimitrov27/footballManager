@@ -198,6 +198,7 @@
             Controls.Add(dgvParticipants);
             Controls.Add(dgvLeagues);
             Name = "LeaguesForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "LeaguesForm";
             ((System.ComponentModel.ISupportInitialize)dgvLeagues).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvParticipants).EndInit();

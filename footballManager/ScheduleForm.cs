@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace footballManager
@@ -11,6 +12,24 @@ namespace footballManager
         {
             InitializeComponent();
             LoadLeaguesCombo();
+            LoadSchedule(1);
+        }
+
+        // 1. Метод за зареждане на мачовете в DataGridView
+        private void LoadSchedule(int leagueId)
+        {
+            try
+            {
+                // Викаме бизнес слоя (BLL) да ни върне таблицата с мачовете
+                DataTable dtMatches = service.GetScheduleTable(leagueId);
+
+                // Закачаме я за DataGridView-то
+                dgvMatches.DataSource = dtMatches;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Грешка при зареждане на програмата: " + ex.Message, "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void LoadLeaguesCombo()
@@ -67,6 +86,11 @@ namespace footballManager
             {
                 MessageBox.Show("Възникна грешка: " + ex.Message, "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ScheduleForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
